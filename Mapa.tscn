@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bscahqa1clmse"]
+
+[ext_resource type="PackedScene" uid="uid://gjp325ed7c13" path="res://player.tscn" id="1_ajuxv"]
+[ext_resource type="Texture2D" uid="uid://bv0ry2vyvwck3" path="res://icon.svg" id="2_lsuff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs4i"]
+size = Vector2(790.25, 20)
+
+[node name="Mapa" type="Node2D"]
+
+[node name="Jorge" parent="." instance=ExtResource("1_ajuxv")]
+position = Vector2(65, 88)
+scale = Vector2(10, 10)
+
+[node name="chao" type="StaticBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="chao"]
+position = Vector2(400.25, 587)
+scale = Vector2(6.10547, 0.164063)
+texture = ExtResource("2_lsuff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao"]
+position = Vector2(411, 589)
+shape = SubResource("RectangleShape2D_4bs4i")
+
+[node name="teto" type="StaticBody2D" parent="."]
+
+[node name="Icon" type="Sprite2D" parent="teto"]
+position = Vector2(382, 13)
+scale = Vector2(6.10547, 0.164063)
+texture = ExtResource("2_lsuff")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teto"]
+position = Vector2(400, 49)
+shape = SubResource("RectangleShape2D_4bs4i")
