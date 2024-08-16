@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx8etis1dbuia"]
+
+[ext_resource type="Texture2D" uid="uid://cyf3axxu3y3j" path="res://assets/groundfinal.png" id="1_6k38s"]
+[ext_resource type="Script" path="res://chao.gd" id="1_i8ka7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs4i"]
+size = Vector2(3840, 102)
+
+[node name="chao" type="StaticBody2D"]
+script = ExtResource("1_i8ka7")
+
+[node name="penes" type="Sprite2D" parent="."]
+position = Vector2(1920, 1025)
+scale = Vector2(4.292, 1.11)
+texture = ExtResource("1_6k38s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1921, 1026)
+shape = SubResource("RectangleShape2D_4bs4i")

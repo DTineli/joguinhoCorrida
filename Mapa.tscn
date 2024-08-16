@@ -1,35 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bscahqa1clmse"]
+[gd_scene load_steps=5 format=3 uid="uid://bscahqa1clmse"]
 
 [ext_resource type="PackedScene" uid="uid://gjp325ed7c13" path="res://player.tscn" id="1_ajuxv"]
-[ext_resource type="Texture2D" uid="uid://bv0ry2vyvwck3" path="res://icon.svg" id="2_lsuff"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4bs4i"]
-size = Vector2(790.25, 20)
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_xikb8"]
+[ext_resource type="PackedScene" uid="uid://jndhihk7215k" path="res://bg.tscn" id="3_ndlcd"]
+[ext_resource type="PackedScene" uid="uid://bx8etis1dbuia" path="res://chao.tscn" id="3_t5ymu"]
 
 [node name="Mapa" type="Node2D"]
+script = ExtResource("1_xikb8")
 
 [node name="Jorge" parent="." instance=ExtResource("1_ajuxv")]
-position = Vector2(65, 88)
-scale = Vector2(10, 10)
+z_index = 1
+position = Vector2(605, 688)
 
-[node name="chao" type="StaticBody2D" parent="."]
+[node name="chao" parent="." instance=ExtResource("3_t5ymu")]
+position = Vector2(84, -209)
 
-[node name="Icon" type="Sprite2D" parent="chao"]
-position = Vector2(400.25, 587)
-scale = Vector2(6.10547, 0.164063)
-texture = ExtResource("2_lsuff")
+[node name="teto" parent="." instance=ExtResource("3_t5ymu")]
+position = Vector2(21, -750)
+flipa = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chao"]
-position = Vector2(411, 589)
-shape = SubResource("RectangleShape2D_4bs4i")
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(960, 540)
 
-[node name="teto" type="StaticBody2D" parent="."]
-
-[node name="Icon" type="Sprite2D" parent="teto"]
-position = Vector2(382, 13)
-scale = Vector2(6.10547, 0.164063)
-texture = ExtResource("2_lsuff")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="teto"]
-position = Vector2(400, 49)
-shape = SubResource("RectangleShape2D_4bs4i")
+[node name="Bg" parent="." instance=ExtResource("3_ndlcd")]
